@@ -105,7 +105,6 @@ public class EarthConroller : MonoBehaviour
         yield return new WaitForSeconds(delay);
         _forceTime += 19f * timeSlider.value;
         earthConstantForce.force = -forceDirection.transform.forward * forceSlider.value * forceScale;
-        StartCoroutine(CancelForce(_forceTime * 60));
         _positons.Clear();
         _started = true;
         _timer = 0;
@@ -115,16 +114,6 @@ public class EarthConroller : MonoBehaviour
         earthRigidbody.velocity = initialVelocityDirection * velocityScale;
         Debug.Log(earthRigidbody.velocity);
         Smoke.SetActive(true);
-        //Vector3 angle = Smoke.transform.eulerAngles;
-        //angle.y = forceDirection.transform.eulerAngles.y;
-        //Smoke.transform.eulerAngles = angle;
-    }
-
-    IEnumerator CancelForce(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        earthConstantForce.force = Vector3.zero;
-        Smoke.SetActive(false);
     }
 
     private void FollowEarth()
