@@ -53,6 +53,8 @@ public class EarthConroller : MonoBehaviour
         Smoke.SetActive(false);
         _uiControl = GameObject.FindObjectOfType<UIControl>();
         _mainCamPosInit = MainCamera.position;
+
+        Simulate();
     }
 
     // Update is called once per frame
@@ -113,9 +115,9 @@ public class EarthConroller : MonoBehaviour
         earthRigidbody.velocity = initialVelocityDirection * velocityScale;
         Debug.Log(earthRigidbody.velocity);
         Smoke.SetActive(true);
-        Vector3 angle = Smoke.transform.eulerAngles;
-        angle.y = forceDirection.transform.eulerAngles.y;
-        Smoke.transform.eulerAngles = angle;
+        //Vector3 angle = Smoke.transform.eulerAngles;
+        //angle.y = forceDirection.transform.eulerAngles.y;
+        //Smoke.transform.eulerAngles = angle;
     }
 
     IEnumerator CancelForce(float delay)

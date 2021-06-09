@@ -10,6 +10,7 @@ public class ConsoleController : MonoBehaviour
     public GameObject rotatePoint;
 
     public EarthConroller earthConroller;
+    public GameObject smoke;
 
     public void TurnOnTrigger()
     {
@@ -24,11 +25,13 @@ public class ConsoleController : MonoBehaviour
     public void TurnRightWheel()
     {
         wheel.transform.RotateAround(wheel.transform.position, wheel.transform.forward, -1);
+        smoke.transform.eulerAngles = new Vector3(0, wheel.transform.eulerAngles.z, 90);
     }
 
     public void TurnLeftWheel()
     {
         wheel.transform.RotateAround(wheel.transform.position, wheel.transform.forward, 1);
+        smoke.transform.eulerAngles = new Vector3(0, wheel.transform.eulerAngles.z, 90);
     }
 
     private void Start()
@@ -38,10 +41,10 @@ public class ConsoleController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            //TurnLeftWheel();
-            //TurnOnTrigger();
-        }
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    TurnLeftWheel();
+        //    TurnOnTrigger();
+        //}
     }
 }
