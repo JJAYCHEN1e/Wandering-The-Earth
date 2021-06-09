@@ -21,10 +21,6 @@ public class EarthConroller : MonoBehaviour
     public LineRenderer lineRenderer;
 
     /// <summary>
-    /// 力的作用时间，分钟！
-    /// </summary>
-    private float _forceTime = 1;
-    /// <summary>
     /// 轨迹点
     /// </summary>
     /// <typeparam name="Vector3"></typeparam>
@@ -103,8 +99,6 @@ public class EarthConroller : MonoBehaviour
     private IEnumerator DoSimulate(float delay)
     {
         yield return new WaitForSeconds(delay);
-        _forceTime += 19f * timeSlider.value;
-        earthConstantForce.force = -forceDirection.transform.forward * forceSlider.value * forceScale;
         _positons.Clear();
         _started = true;
         _timer = 0;
@@ -113,7 +107,17 @@ public class EarthConroller : MonoBehaviour
         Vector3 initialVelocityDirection = (jupiter.transform.position - transform.position).normalized;
         earthRigidbody.velocity = initialVelocityDirection * velocityScale;
         Debug.Log(earthRigidbody.velocity);
-        Smoke.SetActive(true);
+    }
+
+    public void CancelForce()
+    {
+        earthConstantForce.force = Vector3.zero;
+    }
+
+    public void UpdateForce(Vector3 forceDirection)
+    {
+        Debug.Log(forceDirection);
+        earthConstantForce.force = forceDirection * forceScale;
     }
 
     private void FollowEarth()
