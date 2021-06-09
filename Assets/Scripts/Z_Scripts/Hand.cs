@@ -168,6 +168,16 @@ public class Hand : HandBase
                 mRayHitInteract.OnSnapTurnRight();
             }
 
+            if (snapTurnUp.GetState(inputSource))
+            {
+                mRayHitInteract.OnSnapTurnUp();
+            }
+
+            if (snapTurnDown.GetState(inputSource))
+            {
+                mRayHitInteract.OnSnapTurnDown();
+            }
+
             if (trigger.GetStateUp(inputSource))
             {
                 mRayHitInteract.OnTriggerUp();

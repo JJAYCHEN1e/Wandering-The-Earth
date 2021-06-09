@@ -17,6 +17,10 @@ public class HandBase : SteamVR_Behaviour_Pose
 
     public SteamVR_Action_Boolean snapTurnRight = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("SnapTurnRight");
 
+    public SteamVR_Action_Boolean snapTurnUp = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("SnapTurnUp");
+
+    public SteamVR_Action_Boolean snapTurnDown = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("SnapTurnDown");
+
     public Vector2 touchPadAxis = Vector2.zero;
 
     protected override void Start()

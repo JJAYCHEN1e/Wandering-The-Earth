@@ -23,6 +23,10 @@ public class InteractBase : MonoBehaviour
     public UnityEvent snapTurnLeft = null;
     [HideInInspector]
     public UnityEvent snapTurnRight = null;
+    [HideInInspector]
+    public UnityEvent snapTurnUp = null;
+    [HideInInspector]
+    public UnityEvent snapTurnDown = null;
 
     protected Collider mCollider = null;
 
@@ -58,4 +62,6 @@ public class InteractBase : MonoBehaviour
     public virtual void OnTouchUp() { if (touchUp != null) touchUp.Invoke(); }
     public virtual void OnSnapTurnLeft() { if (touch != null) snapTurnLeft.Invoke(); }
     public virtual void OnSnapTurnRight() { if (touchUp != null) snapTurnRight.Invoke(); }
+    public virtual void OnSnapTurnUp() { if (touch != null) snapTurnLeft.Invoke(); }
+    public virtual void OnSnapTurnDown() { if (touchUp != null) snapTurnRight.Invoke(); }
 }
