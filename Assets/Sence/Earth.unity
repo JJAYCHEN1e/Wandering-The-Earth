@@ -1109,7 +1109,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &209729731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3382,11 +3382,11 @@ PrefabInstance:
     - target: {fileID: 2348914, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1900979371}
+      objectReference: {fileID: 1606617347}
     - target: {fileID: 3380982, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 1490645536}
+      objectReference: {fileID: 1491037373}
     - target: {fileID: 1000014254142504, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -6313,7 +6313,7 @@ Transform:
   m_Father: {fileID: 549623674}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!43 &1490645536
+--- !u!43 &1491037373
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6967,6 +6967,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1582258685}
   m_CullTransparentMesh: 1
+--- !u!21 &1606617347
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &1619857207
 GameObject:
   m_ObjectHideFlags: 0
@@ -7742,41 +7777,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1897158698}
   m_CullTransparentMesh: 1
---- !u!21 &1900979371
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1 &1948862401
 GameObject:
   m_ObjectHideFlags: 0
@@ -8135,6 +8135,8 @@ GameObject:
   - component: {fileID: 2109043861}
   - component: {fileID: 2109043860}
   - component: {fileID: 2109043859}
+  - component: {fileID: 2109043863}
+  - component: {fileID: 2109043862}
   m_Layer: 5
   m_Name: Yes
   m_TagString: Untagged
@@ -8218,6 +8220,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 209729735}
+        m_TargetAssemblyTypeName: UIControl, Assembly-CSharp
+        m_MethodName: Restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2109043860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8256,6 +8270,105 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2109043857}
   m_CullTransparentMesh: 1
+--- !u!65 &2109043862
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109043857}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 160, y: 30, z: 0}
+  m_Center: {x: 0, y: 15, z: 0}
+--- !u!114 &2109043863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109043857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e68ab2b6d5f242346a8493cca2413ed9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerDown:
+    m_PersistentCalls:
+      m_Calls: []
+  trigger:
+    m_PersistentCalls:
+      m_Calls: []
+  triggerUp:
+    m_PersistentCalls:
+      m_Calls: []
+  touchDown:
+    m_PersistentCalls:
+      m_Calls: []
+  touch:
+    m_PersistentCalls:
+      m_Calls: []
+  touchUp:
+    m_PersistentCalls:
+      m_Calls: []
+  snapTurnLeft:
+    m_PersistentCalls:
+      m_Calls: []
+  snapTurnRight:
+    m_PersistentCalls:
+      m_Calls: []
+  snapTurnUp:
+    m_PersistentCalls:
+      m_Calls: []
+  snapTurnDown:
+    m_PersistentCalls:
+      m_Calls: []
+  mButtonType: 0
+  mUIButtonType: 0
+  mImage: {fileID: 0}
+  mImageNormalColor: {r: 0.88235295, g: 0.88235295, b: 0.88235295, a: 1}
+  mImageHighlightColor: {r: 0, g: 1, b: 1, a: 1}
+  mImagePressedColor: {r: 0, g: 0.49019608, b: 1, a: 1}
+  mImageDisableColor: {r: 0.49019608, g: 0.49019608, b: 0.49019608, a: 1}
+  mImageNormalSprite: {fileID: 0}
+  mImageLightSprite: {fileID: 0}
+  mImageSwitchSprite: {fileID: 0}
+  mOnClickTime: 0
+  mOnEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  mOnExit:
+    m_PersistentCalls:
+      m_Calls: []
+  mOnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2128341591}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 209729735}
+        m_TargetAssemblyTypeName: UIControl, Assembly-CSharp
+        m_MethodName: Restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &2115520497 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 420908, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
