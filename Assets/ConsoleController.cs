@@ -17,18 +17,24 @@ public class ConsoleController : MonoBehaviour
 
     public void TurnOnTrigger()
     {
-        trigger.transform.RotateAround(rotatePoint.transform.position, trigger.transform.right, -40);
-        smoke.SetActive(true);
-        turnOn = true;
-        if (turnOn) earthConroller.UpdateForce(-forceIndicator.transform.forward);
+        if (!turnOn)
+        {
+            trigger.transform.RotateAround(rotatePoint.transform.position, trigger.transform.right, -40);
+            smoke.SetActive(true);
+            turnOn = true;
+            if (turnOn) earthConroller.UpdateForce(-forceIndicator.transform.forward);
+        }
     }
 
     public void TurnOffTrigger()
     {
-        trigger.transform.RotateAround(rotatePoint.transform.position, trigger.transform.right, 40);
-        earthConroller.CancelForce();
-        smoke.SetActive(false);
-        turnOn = false;
+        if (turnOn)
+        {
+            trigger.transform.RotateAround(rotatePoint.transform.position, trigger.transform.right, 40);
+            earthConroller.CancelForce();
+            smoke.SetActive(false);
+            turnOn = false;
+        }
     }
 
     public void TurnRightWheel()

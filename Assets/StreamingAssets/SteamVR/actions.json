@@ -50,6 +50,14 @@
       "type": "boolean"
     },
     {
+      "name": "/actions/default/in/SnapTurnUp",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/default/in/SnapTurnDown",
+      "type": "boolean"
+    },
+    {
       "name": "/actions/default/out/Haptic",
       "type": "vibration"
     },

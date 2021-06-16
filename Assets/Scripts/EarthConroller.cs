@@ -91,7 +91,7 @@ public class EarthConroller : MonoBehaviour
     {
         TopCamera.DORotate(Vector3.zero, 2).SetEase(Ease.InOutSine);
         TopCamera.DOMove(new Vector3(-0.5f, 1.5f, -85f), 2).SetEase(Ease.InOutSine);
-        StartCoroutine(DoSimulate(2));
+        StartCoroutine(DoSimulate(0));
 
         forceDirection.SetActive(false);
     }
