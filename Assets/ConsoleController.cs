@@ -40,22 +40,23 @@ public class ConsoleController : MonoBehaviour
     public void TurnRightWheel()
     {
         wheel.transform.RotateAround(wheel.transform.position, wheel.transform.forward, 1);
-        smoke.transform.eulerAngles = new Vector3(0, wheel.transform.eulerAngles.z, 90);
-        forceIndicator.transform.eulerAngles = new Vector3(0, wheel.transform.eulerAngles.z, 0);
+        smoke.transform.eulerAngles = new Vector3(0, 180+wheel.transform.localEulerAngles.z, 90);
+        forceIndicator.transform.eulerAngles = new Vector3(0, 180+wheel.transform.localEulerAngles.z, 0);
         if (turnOn) earthConroller.UpdateForce(-forceIndicator.transform.forward);
     }
 
     public void TurnLeftWheel()
     {
         wheel.transform.RotateAround(wheel.transform.position, wheel.transform.forward, -1);
-        smoke.transform.eulerAngles = new Vector3(0, wheel.transform.eulerAngles.z, 90);
-        forceIndicator.transform.eulerAngles = new Vector3(0, wheel.transform.eulerAngles.z, 0);
+        smoke.transform.eulerAngles = new Vector3(0, 180+wheel.transform.localEulerAngles.z, 90);
+        forceIndicator.transform.eulerAngles = new Vector3(0, 180+wheel.transform.localEulerAngles.z, 0);
         if (turnOn) earthConroller.UpdateForce(-forceIndicator.transform.forward);
     }
 
     private void Start()
     {
-        
+        forceIndicator.transform.eulerAngles = new Vector3(0, 180+wheel.transform.localEulerAngles.z, 0);
+        smoke.transform.eulerAngles = new Vector3(0, 180+wheel.transform.localEulerAngles.z, 90);
     }
 
     private void Update()

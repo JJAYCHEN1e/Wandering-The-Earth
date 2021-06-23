@@ -119,13 +119,14 @@ public class EarthConroller : MonoBehaviour
 
     public void UpdateForce(Vector3 forceDirection)
     {
-        Debug.Log(forceDirection);
         earthConstantForce.force = forceDirection * forceScale;
-        if (Vector3.Dot(forceDirection.normalized, earthRigidbody.velocity.normalized) > 0.98)
+        if (Vector3.Dot(forceDirection.normalized, earthRigidbody.velocity.normalized) > 0.97f)
         {
             simualteTipsText.text = "地球正在受恒力，且受力方向与速度方向一致。\n正在进行匀变速直线运动";
+        } else
+        {
+            simualteTipsText.text = "地球正在受恒力，且受力方向与速度方向不一致。\n正在进行匀变速曲线运动";
         }
-        simualteTipsText.text = "地球正在受恒力，且受力方向与速度方向不一致。\n正在进行匀变速曲线运动";
     }
 
     private void FollowEarth()
