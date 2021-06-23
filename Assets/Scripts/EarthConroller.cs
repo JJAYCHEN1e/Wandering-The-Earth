@@ -20,6 +20,8 @@ public class EarthConroller : MonoBehaviour
     public Transform TopCamera;
     public LineRenderer lineRenderer;
 
+    public Text simualteTipsText;
+
     /// <summary>
     /// 轨迹点
     /// </summary>
@@ -112,12 +114,18 @@ public class EarthConroller : MonoBehaviour
     public void CancelForce()
     {
         earthConstantForce.force = Vector3.zero;
+        simualteTipsText.text = "地球不受力\n正在进行匀速直线运动";
     }
 
     public void UpdateForce(Vector3 forceDirection)
     {
         Debug.Log(forceDirection);
         earthConstantForce.force = forceDirection * forceScale;
+        if (Vector3.Dot(forceDirection.normalized, earthRigidbody.velocity.normalized) > 0.98)
+        {
+            simualteTipsText.text = "地球正在受恒力，且受力方向与速度方向一致。\n正在进行匀变速直线运动";
+        }
+        simualteTipsText.text = "地球正在受恒力，且受力方向与速度方向不一致。\n正在进行匀变速曲线运动";
     }
 
     private void FollowEarth()
@@ -199,7 +207,7 @@ public class EarthConroller : MonoBehaviour
 
 
 
-            if (_positiveTime > 5f)
+            if (_positiveTime > 10f)
             {
 
                 _started = false;

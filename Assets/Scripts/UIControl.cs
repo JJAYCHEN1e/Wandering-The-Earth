@@ -47,6 +47,11 @@ public class UIControl : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 
+    public void LoadSimulatingScene()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+    }
+
     public void Exit()
     {
         Application.Quit();
